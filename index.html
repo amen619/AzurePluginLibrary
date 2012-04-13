@@ -21,11 +21,6 @@
           <div style="float:right"><img border="0" src="images/AzurePluginLibrary-small-white.png" style="width: 150px;box-shadow: none;border: none;margin-right: 20px;"/></div>
           <h1 id="project_title">Azure Plugin Library</h1>
           <h2 id="project_tagline">A library of plugins for the Windows Azure SDK</h2>
-
-          <!--section id="downloads">
-            <a class="zip_download_link" href="https://github.com/richorama/AzurePluginLibrary/zipball/master">Download this project as a .zip file</a>
-            <a class="tar_download_link" href="https://github.com/richorama/AzurePluginLibrary/tarball/master">Download this project as a tar.gz file</a>
-          </section-->
         </header>
     </div>
 
@@ -51,6 +46,34 @@
 <h3>How do I install a plugin?</h3>
 
 <h3>How do I add my own plugin to the library?</h3>
+<p>Simply <a href="https://github.com/richorama/AzurePluginLibrary">fork the repository</a> and add your plugin to the 'plugins' directory. Issue a pull request, and your plugin will be accepted.</p>
+<p>A plugin is a zip file, which contains the files that should be included with the Azure package. The zip should contain a [PluginName].csplugin file that looks like this:</p>
+<pre>&lt;?xml version="1.0" ?&gt;
+&lt;RoleModule 
+  xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition"
+  namespace="Microsoft.WindowsAzure.Plugins.[PluginName]"&gt;
+  &lt;Startup priority="-1"&gt;
+    &lt;Task commandLine="Task1.cmd" executionContext="elevated" taskType="simple" /&gt;
+    &lt;Task commandLine="Task2.exe" executionContext="elevated" taskType="background" /&gt;
+  &lt;/Startup&gt;
+  &lt;ConfigurationSettings&gt;
+    &lt;Setting name="ConfigSettingName" /&gt;
+  &lt;/ConfigurationSettings&gt;
+  &lt;Endpoints&gt;
+    &lt;InputEndpoint name="Name" protocol="tcp" port="1337" localPort="*" ignoreRoleInstanceStatus="true" /&gt;
+  &lt;/Endpoints&gt;
+  &lt;Certificates&gt;
+  &lt;/Certificates&gt;
+&lt;/RoleModule&gt;</pre>
+
+A [PluginName].zip file should be created, which includes this file, the tasks, and any other dependencies.
+
+<p>There are some additional rules:</p>
+<ul>
+<li>The extension must be .zip (lower case).</li>
+<li>The zip should not have a folder</li>
+<li>The zip should contain a .csplugin file, with the same name.</li>
+</ul>
 
 </section>
     </div>
@@ -62,8 +85,5 @@
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-
-    
-
   </body>
 </html>
