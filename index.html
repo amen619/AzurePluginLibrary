@@ -46,34 +46,34 @@
 </ul>
 <p>Plugins are installed in this directory:</p>
 <pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
-<p>This aims to extends the plugins available with a community maintained library, and a command line installer.</p>
+<p>This project aims to extends the capability of the SDK by providing a wide range plugins with a community maintained library, and a command line installer.</p>
 
 
 <h3>What plugins are available?</h3>
-<p>Plugins are stored in a <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>. You can manually browse and download the plugins.</p>
+<p>The Azure Plugin Library is maintained in a <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>. You can browse and download the plugins directly from the respository, or alternatively use the command line tool (see below).</p>
 
 <h3>How do I install a plugin?</h3>
 <h5>Option 1 : Use the AzurePluginManager</h5>
-The AzurePluginManager (APM) is a command line utility you can use to discover plugins, install, update and remove them.
+The AzurePluginManager (APM) is a command line utility you can use to discover, install, update and remove plugins.
 <blockquote>
 <p><a href="https://github.com/downloads/richorama/AzurePluginLibrary/setup.exe">Download the Installer</a> (recommended)</p>
 <p><a href="https://github.com/richorama/APM/zipball/master">Download the source</a></p>
 <p><a href="https://github.com/richorama/APM/">View on GitHub</a></p>
 </blockquote>
-<p>Once installed, APM can be used to list the available packages:</p>
+<p>Once installed, APM can be used to list the available plugins:</p>
 <pre>> apm list</pre>
-<p>Install a package:</p>
+<p>Install a plugin:</p>
 <pre>> apm install ClassicASP</pre>
-<p>Update a package:</p>
+<p>Update a plugin:</p>
 <pre>> apm update ClassicASP</pre>
-<p>Remove a package:</p>
+<p>Remove a plugin:</p>
 <pre>> apm remove ClassicASP</pre>
-<p>View installed packages:</p>
+<p>View installed plugins:</p>
 <pre>> apm installed</pre>
 
 
 <h5>Option 2 : Manually</h5>
-<p>Either browse the packages in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the repository. To install the plugin, unzip the into a directory of the same name in the location:</p>
+<p>Either browse the plugins in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the entire repository. To install the plugin, unzip the files into a directory of the same name, in the location:</p>
   <pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
 <h3>How do I include a plugin in my Azure package?</h3>
 <p>Installed plugins will be included in your Azure package, if you add them as an Import in your ServiceDefinition.csdef file:</p>
