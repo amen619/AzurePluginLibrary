@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/richorama/AzurePluginLibrary">Fork Me on GitHub</a>
 
-          <div style="float:right"><img border="0" src="images/AzurePluginLibrary-small-white.png" style="width: 150px;box-shadow: none;border: none;margin-right: 20px;"/></div>
+          <div style="float:right"><img border="0" src="images/AzurePluginLibrary-small-white.png" style="width: 150px;height:88px;box-shadow: none;border: none;margin-right: 20px;"/></div>
           <h1 id="project_title">Azure Plugin Library</h1>
           <h2 id="project_tagline">A library of plugins for the Windows Azure SDK</h2>
         </header>
@@ -27,13 +27,16 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>What is it the Azure Plugin Library?</h3>
+        <div style="width: 100%;padding: 10px;box-shadow: 0 0 10px rgba(0,0,0,.1);overflow: auto;color: #222;background-color: white;border-radius: 2px;">
+          <h3>What is it the Azure Plugin Library?</h3>
 
-<p>The Azure Plugin Library hosts a number of 'plugin' extensions to the Windows Azure SDK.</p>
+          <p>The Azure Plugin Library hosts a number of 'plugin' extensions to the Windows Azure SDK.</p>
+          <p>The library can be <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">browsed on GitHub</a>, and a <a href="https://github.com/downloads/richorama/AzurePluginLibrary/setup.exe">console application</a> can be used to install and remove plugins.</p>
+        </div>
 <h3>What is a plugin?</h3>
 <p>A plugin comprises of configuration, scripts and binaries that are packaged with your Azure deployment, and executed on the Azure Web or Worker Role.</p>
 <p>Theses plugins will typically alter the configuration of the Azure instance or install a dependency.</p>
-<p>The Windows Azure SDK ships with five plugins installed:
+<p>The Windows Azure SDK ships with five plugins installed:</p>
 <ul>
   <li>Connect</li>
   <li>Diagnostics</li>
@@ -41,9 +44,46 @@
   <li>RemoteForwarder</li>
   <li>WebDeploy</li>
 </ul>
-</p>
+<p>Plugins are installed in this directory:</p>
+<pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
+<p>This aims to extends the plugins available with a community maintained library, and a command line installer.</p>
+
+
+<h3>What plugins are available?</h3>
+<p>Plugins are stored in a <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>. You can manually browse and download the plugins.</p>
 
 <h3>How do I install a plugin?</h3>
+<h5>Option 1 : Use the AzurePluginManager</h5>
+The AzurePluginManager (APM) is a command line utility you can use to discover plugins, install, update and remove them.
+<blockquote>
+<p><a href="https://github.com/downloads/richorama/AzurePluginLibrary/setup.exe">Download the Installer</a> (recommended)</p>
+<p><a href="https://github.com/richorama/APM/zipball/master">Download the source</a></p>
+<p><a href="https://github.com/richorama/APM/">View on GitHub</a></p>
+</blockquote>
+<p>Once installed, APM can be used to list the available packages:</p>
+<pre>> apm list</pre>
+<p>Install a package:</p>
+<pre>> apm install ClassicASP</pre>
+<p>Update a package:</p>
+<pre>> apm update ClassicASP</pre>
+<p>Remove a package:</p>
+<pre>> apm remove ClassicASP</pre>
+<p>View installed packages:</p>
+<pre>> apm installed</pre>
+
+
+<h5>Option 2 : Manually</h5>
+<p>Either browse the packages in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the repository. To install the plugin, unzip the into a directory of the same name in the location:</p>
+  <pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
+<h3>How do I include a plugin in my Azure package?</h3>
+<p>Installed plugins will be included in your Azure package, if you add them as an Import in your ServiceDefinition.csdef file:</p>
+<pre>&lt;ServiceDefinition&gt;
+  &lt;WorkerRole&gt;
+    &lt;Imports&gt;
+      &lt;Import moduleName="[PluginName]" /&gt;
+    &lt;/Imports&gt;
+  &lt;/WorkerRole&gt;
+&lt;/ServiceDefinition&gt;</pre>
 
 <h3>How do I add my own plugin to the library?</h3>
 <p>Simply <a href="https://github.com/richorama/AzurePluginLibrary">fork the repository</a> and add your plugin to the 'plugins' directory. Issue a pull request, and your plugin will be accepted.</p>
@@ -57,7 +97,7 @@
     &lt;Task commandLine="Task2.exe" executionContext="elevated" taskType="background" /&gt;
   &lt;/Startup&gt;
   &lt;ConfigurationSettings&gt;
-    &lt;Setting name="ConfigSettingName" /&gt;
+    &lt;Setting name="SettingName" /&gt;
   &lt;/ConfigurationSettings&gt;
   &lt;Endpoints&gt;
     &lt;InputEndpoint name="Name" protocol="tcp" port="1337" localPort="*" ignoreRoleInstanceStatus="true" /&gt;
@@ -66,12 +106,12 @@
   &lt;/Certificates&gt;
 &lt;/RoleModule&gt;</pre>
 
-A [PluginName].zip file should be created, which includes this file, the tasks, and any other dependencies.
+<p>A [PluginName].zip file should be created, which includes this file, the tasks, and any other dependencies.</p>
 
 <p>There are some additional rules:</p>
 <ul>
 <li>The extension must be .zip (lower case).</li>
-<li>The zip should not have a folder</li>
+<li>The zip should not have a folder.</li>
 <li>The zip should contain a .csplugin file, with the same name.</li>
 </ul>
 
@@ -81,7 +121,8 @@ A [PluginName].zip file should be created, which includes this file, the tasks, 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Azurepluginlibrary maintained by <a href="https://github.com/richorama">richorama</a></p>
+        <a href="http://www.two10degrees.com/"><img style="float:right;width: 200px; height:79px;box-shadow: none;border: 0;margin:0;" src="images/two10degrees.png"/></a>
+        <p class="copyright">Azure Plugin Library maintained by <a href="https://github.com/richorama">richorama</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
