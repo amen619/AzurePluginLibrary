@@ -76,7 +76,7 @@ The AzurePluginManager (APM) is a command line utility you can use to discover, 
 <p>Either browse the plugins in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the entire repository. To install the plugin, unzip the files into a directory of the same name, in the location:</p>
   <pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
 <h3>How do I include a plugin in my Azure package?</h3>
-<p>Installed plugins will be included in your Azure package, if you add them as an Import in your ServiceDefinition.csdef file:</p>
+<p>Installed plugins will be included in your Azure package if you add them as an Import in your ServiceDefinition.csdef file:</p>
 <pre>&lt;ServiceDefinition&gt;
   &lt;WorkerRole&gt;
     &lt;Imports&gt;
@@ -119,7 +119,7 @@ The AzurePluginManager (APM) is a command line utility you can use to discover, 
     </div>
 
     <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
+    <div id="footer_wrap" class="outer" style="background-color:#333">
       <footer class="inner">
         <a href="http://www.two10degrees.com/"><img style="float:right;width: 200px; height:79px;box-shadow: none;border: 0;margin:0;" src="images/two10degrees.png"/></a>
         <p class="copyright">Azure Plugin Library maintained by <a href="https://github.com/richorama">richorama</a></p>
