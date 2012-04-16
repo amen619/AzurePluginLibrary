@@ -36,7 +36,7 @@
 <h3>What is a plugin?</h3>
 <p>A plugin comprises of configuration, scripts and binaries that are packaged with your Azure deployment, and executed on the Azure Web or Worker Role.</p>
 <p>These plugins will typically alter the configuration of the Azure instance or install a dependency.</p>
-<p>The Windows Azure SDK ships with five plugins installed:</p>
+<p>The Windows Azure SDK ships with five plugins:</p>
 <ul>
   <li>Connect</li>
   <li>Diagnostics</li>
@@ -54,7 +54,7 @@
 
 <h3>How do I install a plugin?</h3>
 <h5>Option 1 : Use the AzurePluginManager</h5>
-The AzurePluginManager (APM) is a command line utility you can use to discover, install, update and remove plugins.
+<p>The AzurePluginManager (APM) is a command line utility to discover, install, update and remove plugins.</p>
 <blockquote>
 <p><a href="https://github.com/downloads/richorama/AzurePluginLibrary/setup.exe">Download the Installer</a> (recommended)</p>
 <p><a href="https://github.com/richorama/APM/zipball/master">Download the source</a></p>
@@ -73,7 +73,7 @@ The AzurePluginManager (APM) is a command line utility you can use to discover, 
 
 
 <h5>Option 2 : Manually</h5>
-<p>Either browse the plugins in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the entire repository. To install the plugin, unzip the files into a directory of the same name, in the location:</p>
+<p>Either browse the plugins in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the entire repository. To install the plugin; unzip the files into a directory of the same name, in this location:</p>
   <pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
 <h3>How do I include a plugin in my Azure package?</h3>
 <p>Installed plugins will be included in your Azure package if you add them as an Import in your ServiceDefinition.csdef file:</p>
@@ -87,7 +87,7 @@ The AzurePluginManager (APM) is a command line utility you can use to discover, 
 
 <h3>How do I add my own plugin to the library?</h3>
 <p>Simply <a href="https://github.com/richorama/AzurePluginLibrary">fork the repository</a> and add your plugin to the 'plugins' directory. Issue a pull request, and your plugin will be accepted.</p>
-<p>A plugin is a zip file, which contains the files that should be included with the Azure package. The zip should contain a [PluginName].csplugin file that looks like this:</p>
+<p>A plugin is a zip file, which contains the files that should be included with the Azure package. The zip should contain a [PluginName].csplugin like this:</p>
 <pre>&lt;?xml version="1.0" ?&gt;
 &lt;RoleModule 
   xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition"
@@ -106,7 +106,7 @@ The AzurePluginManager (APM) is a command line utility you can use to discover, 
   &lt;/Certificates&gt;
 &lt;/RoleModule&gt;</pre>
 
-<p>A [PluginName].zip file should be created, which includes this file, the tasks, and any other dependencies.</p>
+<p>A [PluginName].zip file should be created, which includes this file, your tasks, and any other dependencies.</p>
 
 <p>There are some additional rules:</p>
 <ul>
