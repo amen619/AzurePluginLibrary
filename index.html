@@ -11,7 +11,7 @@
     <title>Azure Plugin Library</title>
   </head>
 
-  <body style="display:none">
+  <body>
 
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
@@ -73,7 +73,7 @@
 
 
 <h5>Option 2 : Manually</h5>
-<p>Either browse the plugins in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the zip file you want (press the 'RAW' button) - or clone the entire repository. To install the plugin; unzip the files into a directory of the same name, in this location:</p>
+<p>Either browse the plugins in the <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>, and manually download the files you want - or clone the entire repository. To install the plugin; copy the folder and files to this location:</p>
   <pre>C:\Program Files\Windows Azure SDK\v1.x\bin\plugins</pre>
 <h3>How do I include a plugin in my Azure package?</h3>
 <p>Installed plugins will be included in your Azure package if you add them as an Import in your ServiceDefinition.csdef file:</p>
@@ -87,7 +87,7 @@
 
 <h3>How do I add my own plugin to the library?</h3>
 <p>Simply <a href="https://github.com/richorama/AzurePluginLibrary">fork the repository</a> and add your plugin to the 'plugins' directory. Issue a pull request, and your plugin will be accepted.</p>
-<p>A plugin is a zip file, which contains the files that should be included with the Azure package. The zip should contain a [PluginName].csplugin like this:</p>
+<p>A plugin is a folder, which contains the files that should be included with the Azure package. The folder should contain a [PluginName].csplugin of the name name like this:</p>
 <pre>&lt;?xml version="1.0" ?&gt;
 &lt;RoleModule 
   xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition"
@@ -106,14 +106,7 @@
   &lt;/Certificates&gt;
 &lt;/RoleModule&gt;</pre>
 
-<p>A [PluginName].zip file should be created, which includes this file, your tasks, and any other dependencies.</p>
-
-<p>There are some additional rules:</p>
-<ul>
-<li>The extension must be .zip (lower case).</li>
-<li>The zip should not have a folder.</li>
-<li>The zip should contain a .csplugin file, with the same name.</li>
-</ul>
+<p>Your plugin folder should be added to the 'plugins' folder of this repository.</p>
 
 </section>
     </div>
