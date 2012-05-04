@@ -7,6 +7,25 @@
     <meta name="description" content="Azurepluginlibrary : A library of plugins for the Windows Azure SDK" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js" ></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" ></script>
+
+
+    <script>
+
+      $(document).ready(function() {
+        $("head").append('<script type="text/javascript" src="https://api.github.com/repos/richorama/AzurePluginLibrary/contents/plugins?callback=listPlugins"/>');
+      });
+
+      function listPlugins(json) {
+        console.log(json);
+        $("#plugins-host").html($("#plugins-template").tmpl(json));
+      }
+    </script>
+
+
+
+    
 
     <title>Azure Plugin Library</title>
   </head>
@@ -50,10 +69,14 @@
 
 
 <h3>What plugins are available?</h3>
-<p>The Azure Plugin Library is maintained in a <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>. You can browse and download the plugins directly from the respository, or alternatively use the command line tool (see below).</p>
+<p>The Azure Plugin Library is maintained in a <a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins">GitHub repository</a>. You can browse and download the plugins directly from the respository, using the links below, or alternatively use the <a href="#APM">command line tool</a>.</p>
+<ul id="plugins-host"></ul>
+<script id="plugins-template" type="text/template">
+  {{each data}}<li><a href="https://github.com/richorama/AzurePluginLibrary/tree/master/plugins/${$value.name}">${$value.name}</a></li>{{/each}}
+</script>
 
 <h3>How do I install a plugin?</h3>
-<h5>Option 1 : Use the AzurePluginManager</h5>
+<h5><a name="APM"></a>Option 1 : Use the AzurePluginManager</h5>
 <p>The AzurePluginManager (APM) is a command line utility to discover, install, update and remove plugins.</p>
 <blockquote>
 <p><a href="https://github.com/downloads/richorama/AzurePluginLibrary/setup.exe">Download the installer</a> (recommended)</p>
