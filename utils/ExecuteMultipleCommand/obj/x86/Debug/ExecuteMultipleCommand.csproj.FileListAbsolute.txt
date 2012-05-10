@@ -1,0 +1,6 @@
+D:\git\AzurePluginLibrary\utils\ExecuteMultipleCommand\bin\Debug\ExecuteMultipleCommand.exe.config
+D:\git\AzurePluginLibrary\utils\ExecuteMultipleCommand\bin\Debug\ExecuteMultipleCommand.exe
+D:\git\AzurePluginLibrary\utils\ExecuteMultipleCommand\bin\Debug\ExecuteMultipleCommand.pdb
+D:\git\AzurePluginLibrary\utils\ExecuteMultipleCommand\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git\AzurePluginLibrary\utils\ExecuteMultipleCommand\obj\x86\Debug\ExecuteMultipleCommand.exe
+D:\git\AzurePluginLibrary\utils\ExecuteMultipleCommand\obj\x86\Debug\ExecuteMultipleCommand.pdb

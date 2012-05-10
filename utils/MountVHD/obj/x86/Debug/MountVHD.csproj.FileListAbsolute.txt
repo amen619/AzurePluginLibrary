@@ -1,0 +1,10 @@
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\MountVHD.exe.config
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\MountVHD.exe
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\MountVHD.pdb
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\Microsoft.WindowsAzure.CloudDrive.dll
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\Microsoft.WindowsAzure.StorageClient.dll
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\Microsoft.WindowsAzure.CloudDrive.xml
+D:\git\AzurePluginLibrary\utils\MountVHD\bin\Debug\Microsoft.WindowsAzure.StorageClient.xml
+D:\git\AzurePluginLibrary\utils\MountVHD\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git\AzurePluginLibrary\utils\MountVHD\obj\x86\Debug\MountVHD.exe
+D:\git\AzurePluginLibrary\utils\MountVHD\obj\x86\Debug\MountVHD.pdb

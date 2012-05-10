@@ -1,0 +1,5 @@
+D:\git\AzurePluginLibrary\utils\DownloadFile\bin\Debug\DownloadFile.exe
+D:\git\AzurePluginLibrary\utils\DownloadFile\bin\Debug\DownloadFile.pdb
+D:\git\AzurePluginLibrary\utils\DownloadFile\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\git\AzurePluginLibrary\utils\DownloadFile\obj\x86\Debug\DownloadFile.exe
+D:\git\AzurePluginLibrary\utils\DownloadFile\obj\x86\Debug\DownloadFile.pdb
