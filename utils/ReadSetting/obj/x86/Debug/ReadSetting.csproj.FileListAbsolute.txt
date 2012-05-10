@@ -1,6 +1,0 @@
-D:\git\AzurePluginLibrary\utils\ReadSetting\bin\Debug\ReadSetting.exe.config
-D:\git\AzurePluginLibrary\utils\ReadSetting\bin\Debug\ReadSetting.exe
-D:\git\AzurePluginLibrary\utils\ReadSetting\bin\Debug\ReadSetting.pdb
-D:\git\AzurePluginLibrary\utils\ReadSetting\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\git\AzurePluginLibrary\utils\ReadSetting\obj\x86\Debug\ReadSetting.exe
-D:\git\AzurePluginLibrary\utils\ReadSetting\obj\x86\Debug\ReadSetting.pdb
